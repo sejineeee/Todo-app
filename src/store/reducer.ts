@@ -37,6 +37,13 @@ const reducers = {
       createdDate: null,
     };
   },
+  deleteTodoItem(state: TodoState, { payload: id }: PayloadAction<number>) {
+    const { todoList } = state;
+    return {
+      ...state,
+      todoList: todoList.filter((todoItem) => todoItem.id !== id),
+    };
+  },
 };
 
 const { actions, reducer } = createSlice({
@@ -45,6 +52,6 @@ const { actions, reducer } = createSlice({
   reducers,
 });
 
-export const { changeTodoContent, addTodoList } = actions;
+export const { changeTodoContent, addTodoList, deleteTodoItem } = actions;
 
 export default reducer;
