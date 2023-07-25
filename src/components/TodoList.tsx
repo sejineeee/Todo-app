@@ -15,7 +15,7 @@ const TodoList = (): JSX.Element => {
   return (
     <div>
       {todoList.map(({ id, content, createdDate }) => (
-        <TodoItem key={id} content={content} createdDate={createdDate} />
+        <TodoItem key={id} id={id} content={content} createdDate={createdDate} />
       ))}
     </div>
   );
